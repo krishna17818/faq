@@ -1,18 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
-
 class QuestionController extends Controller
 {
     public function __construct()
     {
-
-       $this->middleware('auth');
-
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -23,7 +18,6 @@ class QuestionController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +27,6 @@ class QuestionController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -44,7 +37,6 @@ class QuestionController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -55,7 +47,6 @@ class QuestionController extends Controller
     {
         return view('question')->with('question', $question);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,7 +57,6 @@ class QuestionController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -78,7 +68,6 @@ class QuestionController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

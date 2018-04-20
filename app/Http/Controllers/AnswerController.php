@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Answer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
 class AnswerController extends Controller
 {
     /**
@@ -14,15 +12,12 @@ class AnswerController extends Controller
      */
     public function __construct()
     {
-
         $this->middleware('auth');
-
     }
     public function index()
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +27,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -43,7 +37,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -53,10 +46,8 @@ class AnswerController extends Controller
     public function show($question, $answer)
     {
         $answer = Answer::find($answer);
-
         return view('answer')->with(['answer' => $answer, 'question' => $question]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -67,7 +58,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -79,7 +69,6 @@ class AnswerController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

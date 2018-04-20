@@ -1,11 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
 class ProfileController extends Controller
 {
     /**
@@ -17,7 +13,6 @@ class ProfileController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +22,6 @@ class ProfileController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,7 +32,6 @@ class ProfileController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -51,7 +44,6 @@ class ProfileController extends Controller
         $profile = $user->profile;
         return view('profile')->with('profile', $profile);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -62,7 +54,6 @@ class ProfileController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -74,7 +65,6 @@ class ProfileController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
