@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Database\Seeder;
-
 class QuestionsTableSeeder extends Seeder
 {
     /**
@@ -17,9 +15,7 @@ class QuestionsTableSeeder extends Seeder
                 $question = factory(\App\Question::class)->make();
                 $question->user()->associate($user);
                 $question->save();
-
             });
         }
-
     }
 }
