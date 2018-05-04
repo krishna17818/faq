@@ -97,7 +97,6 @@ class ProfileController extends Controller
         $profile->save();
         return redirect()->route('home')->with('message', 'Updated Profile');
     }
-
     /**
      * Remove the specified resource from storage.
      *
