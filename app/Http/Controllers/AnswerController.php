@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Answer;
+use App\Notifications\NewNotification;
+use App\Notifications\NewUpdate;
 use App\Question;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -46,7 +48,8 @@ class AnswerController extends Controller
         $Answer->user()->associate(Auth::user());
         $Answer->question()->associate($question);
         $Answer->save();
-        return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
+        Auth::user()->notify(new NewNotification());
+      return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
     }
     /**
      * Display the specified resource.
@@ -69,6 +72,7 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($answer);
         $edit = TRUE;
+
         return view('answerForm', ['answer' => $answer, 'edit' => $edit, 'question'=>$question ]);
     }
     /**
@@ -90,6 +94,7 @@ class AnswerController extends Controller
         $answer = Answer::find($answer);
         $answer->body = $request->body;
         $answer->save();
+        Auth::user()->notify(new NewUpdate());
         return redirect()->route('answers.show',['question_id' => $question, 'answer_id' => $answer])->with('message', 'Updated');
     }
     /**
