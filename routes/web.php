@@ -12,6 +12,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/*Route::get('/', function () {
+    $user = user::find(1);
+    $user = user::find(1)->notify(new NewNotification());
+    return view('welcome');
+});*/
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 

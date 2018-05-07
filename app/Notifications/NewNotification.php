@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Notifications;
-
+use App\User;
+use App\Answer;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -18,7 +19,7 @@ class NewNotification extends Notification
      */
     public function __construct()
     {
-        //
+
     }
 
     /**
@@ -29,7 +30,7 @@ class NewNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database', 'mail'];
     }
 
     /**
@@ -40,11 +41,16 @@ class NewNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url("{{ route('login') }}");
+
+
         return (new MailMessage)
+                    ->greeting('Hello!')
                     ->line('There is a new answer to your question.')
-                    ->action('Read the Answer', url('/'))
+                    ->action('Read the Answer', url('login'))
                     ->line('Thank you for being a loyal user!');
     }
+
 
     /**
      * Get the array representation of the notification.
@@ -55,7 +61,7 @@ class NewNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            "data" => 'There is a new answer to your question.'
         ];
     }
 }

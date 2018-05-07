@@ -49,7 +49,7 @@ class AnswerController extends Controller
         $Answer->question()->associate($question);
         $Answer->save();
         Auth::user()->notify(new NewNotification());
-      return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
+        return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
     }
     /**
      * Display the specified resource.
@@ -72,7 +72,6 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($answer);
         $edit = TRUE;
-
         return view('answerForm', ['answer' => $answer, 'edit' => $edit, 'question'=>$question ]);
     }
     /**
@@ -90,7 +89,6 @@ class AnswerController extends Controller
             'body.required' => 'Body is required',
             'body.min' => 'Body must be at least 5 characters',
         ]);
-
         $answer = Answer::find($answer);
         $answer->body = $request->body;
         $answer->save();
