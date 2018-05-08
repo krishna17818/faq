@@ -41,7 +41,7 @@ class NewNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = url("{{ route('login') }}");
+
 
 
         return (new MailMessage)

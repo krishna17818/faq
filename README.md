@@ -1,12 +1,12 @@
 # faq
 
-Approach:
+Approach (Epic):
 
 This project is created to notify a user when the question being answered or edited. The user should get an email with the message of action and link button to that question.
 
 
 
-Classification:
+User Stories:
 
 1. This project is created for user login and registration. The simple project with every basic things from user access to database, we have covered all things in this single project.
 2. This project gives you the access to create a question and also answer the question. The question panel with the time the question was posted and page bar will be created. 
@@ -30,19 +30,19 @@ To run the FAQ Project:
 
 Project Resources:
 
-(https://laravel.com/docs/5.6/eloquent)
+https://laravel.com/docs/5.6/eloquent
 
-(https://laravel.com/docs/5.6/database)
+https://laravel.com/docs/5.6/database
 
-(https://laravel.com/docs/5.6/seeding)
+https://laravel.com/docs/5.6/seeding
 
-(https://laravel.com/docs/5.6/testing)
+https://laravel.com/docs/5.6/testing
 
 
 Relevant feature resources:
 
-(https://laravel.com/docs/5.6/notifications#mail-notifications)
+https://laravel.com/docs/5.6/notifications#mail-notifications
 
-(https://laravel.com/docs/5.6/notifications)
+https://laravel.com/docs/5.6/notifications
 
-(https://mailtrap.io)
+https://mailtrap.io

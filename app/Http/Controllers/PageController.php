@@ -32,10 +32,7 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -81,4 +78,22 @@ class PageController extends Controller
     {
         //
     }
+    function about()
+    {
+        return view('about');
+    }
+    function contact()
+    {
+        return view('contact');
+    }
+    function store(Request $request)
+    {
+        $name = $request->name;
+        return redirect()->route('thanks', ['name' => $name]);
+    }
+    function thanks($name, Request $request)
+    {
+        return view('thankyou')->with(compact('name'));
+    }
+
 }
